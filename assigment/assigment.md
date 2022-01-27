@@ -99,9 +99,9 @@ RewriteCond %{REQUEST_URI} !index\.php
 RewriteRule ^([-a-zA-Z0-9_/]+)$ index.php?%{QUERY_STRING}&page=$1 [L]
 ```
 * N07) Stránka musí být vhodně ostylována na základě mockups.
-![mockup-article-list](./semestral-work/mockup-article-list.png)
-![mockup-article-detail](./semestral-work/mockup-article-detail.png)
-![mockup-article-edit](./semestral-work/mockup-article-edit.png)
+![mockup-article-list](./mockup-article-list.png)
+![mockup-article-detail](./mockup-article-detail.png)
+![mockup-article-edit](./mockup-article-edit.png)
 
 ## Data
 Data jsou uložena v relační databázi MySQL.
