@@ -1,0 +1,6 @@
+RewriteEngine On
+#RewriteBase /localhost/
+
+RewriteCond %{REQUEST_URI} !index\.php
+RewriteRule ^([-a-zA-Z0-9_/]+)$ index.php?%{QUERY_STRING}&controller=$1 [L]
+#RewriteRule ^([-a-zA-Z0-9_/]+)$ index.php?%{QUERY_STRING}&controller=$1&method=$2 [L]

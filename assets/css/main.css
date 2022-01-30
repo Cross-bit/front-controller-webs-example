@@ -1,8 +1,319 @@
 
+@font-face{
+    font-family: customComics;
+    src: url(../fonts/ComicNeue-Regular.otf);
+}
 
-.body{
-    background-color: blue;
+body {
+    font-family: "customComics", "Comic Sans MS"
+}
+
+.wrapper{
+    width: 600px;
+    position: relative;
+    margin: 0 auto;
+    padding: 5px 50px 20px;
+    border: solid 2px black;
+
+}
+
+hr{
+    border: solid black 1px;
+}
+
+
+/* -- articles archive list -- */
+
+.article-item{
+    
+    align-items: baseline;
+    padding-left: 10px;
+    padding-right: 10px;
+    justify-content: space-between;
+    margin-top: 15px;
+    border: solid 2px black;
+}
+
+
+.article-item .article-item-title{
+    min-width: 50%;
+    padding-right: 20px;
+    
+}
+
+.article-item .article-item-title h2{
+    margin-top: 0px;
+}
+
+.comics-first{
+
+    border-width: 3px 3px 5px 5px;
+    border-radius: 4% 5% 6% 95%/8% 4% 1% 5%;
+    transform: rotate(-0.5deg);
+}
+
+#articles-list-container{
+    min-height: 600px;
+}
+
+.oddboxinner{
+    
+    margin:0px;
+    transform: rotate(0.5deg);
+}
+
+.article-item div:last-child {
+    margin-left: auto;
+}
+
+#article-item-buttons {
+    /*margin-left: 20px;*/
+    width: 300px;
+    display: flex;
+    align-content: flex-start;
+    align-items: baseline;
+    flex-wrap: wrap;    
+    gap: 10%;
+
+}
+
+@media (min-width: 1000px) {
+    #article-item-buttons button:last-child{
+        margin-left: auto;
+    }
+}
+
+
+.article-item a{
+    transition: transform .15s;
+}
+
+.article-item a:hover{
+    transform: scale(1.1);
+    transform: rotate(5deg);
+    animation-timing-function: ease-in-out;
+    animation: buttonShake 1s;
 }
 
 
 
+a.link-normal {
+    color:rgb(0, 132, 255);
+    text-decoration: none;
+    font-size: 1.618em;
+}
+
+a.link-warning {
+    color:red;
+    text-decoration: none;
+    font-size: 1.618em;
+}
+
+
+.btn {
+    font-family: customComics;
+    background-color: white;
+    font-size: 1.618em;
+    margin: 3px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    background-color: wheat;
+}
+
+
+.btn.delete-btn{
+    color:red;
+    text-decoration: none;
+    font-size: 1.618em;
+    background-color: white;
+    border: none;
+    outline:none;
+}
+
+.btn:hover{
+    transform: scale(1.05);
+    
+}
+
+.btn-action {
+    background-color:rgb(102, 181, 255);
+}
+
+.btn-accept {
+    background-color:rgb(102, 255, 127);;
+}
+.btn-reject{
+    background-color:rgb(255, 102, 102);;
+}
+
+.articles-list-menu {
+    padding-top: 15px;
+    height: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 5px;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.articles-list-menu .pagination-controlls {
+    min-width: 200px;
+    height: 50px;
+    position:relative;
+    /*display: flex;
+    justify-content: flex-start;
+    background-color: tomato;*/
+}
+
+.pagination-controlls #pagination-previous{
+    position: relative;
+    left:0px;
+}
+.pagination-controlls #pagination-next{
+    position: absolute;
+    right:0px;
+}
+
+
+#page-counter {
+    font-size: 1.2em;
+}
+
+
+/* single article */
+
+.article-content {
+    padding: 15px 20px 15px;
+}
+
+.single-article-menu {
+    height: 50px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+.single-article-menu button:first-child{
+    min-width: 90px;
+}
+
+
+/* article edit */
+
+#article-edit-form #content-edit-view{
+    width: 100%;
+    min-height: 20px;
+    resize: vertical;
+    border: solid 2px black;
+    border-radius: 5px;
+}
+
+#article-edit-form #title-edit{
+    font-size: 1.1em;
+    font-family: customComics;
+    border-radius: 5px;
+    width: 80%;    
+}
+
+.requiredTextInput {
+    background-color: rgb(252, 238, 217);
+}
+
+.article-edit-menu{
+    height: 50px;
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+/* Dialog window */
+
+.dialog{
+    display: none;
+    position: fixed;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    z-index: 1000;
+    left: 0;
+    top: 0;
+}
+
+.dialog-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: 150px auto;
+    padding: 20px;
+    padding-top: 0px;
+    border: 2px solid rgb(0, 0, 0);
+    width: 350px;
+    box-shadow: 5px 10px 8px 10px #88888867;
+
+    
+    animation-name: dialogComming;
+    animation-duration: 0.5s
+}
+
+.dialog-content-leaving-animation{
+    animation-name: dialogLeaving;
+    animation-duration: 0.5s
+}
+
+@keyframes dialogComming {
+    from {left:-300px; opacity:0}
+    to {left:0px; opacity:1}
+  }
+
+@keyframes dialogLeaving {
+    from {left:0px; opacity:1}
+    to {left:-300px; opacity:0}
+  }
+
+.dialog-content .dialog-control{
+    
+    padding-top: 20px;
+}
+
+#new-article-name{
+    font-size: 1.1em;
+    font-family: customComics;
+    border-radius: 5px;
+    width: 85%;   
+    transition: 0.2s;
+}
+
+#new-article-name:hover {
+    transform: scale(1.01);
+}
+
+@media (max-width: 750px) {
+    .wrapper{
+        width: 80%;
+    }
+}
+
+@media (max-width: 450px) {
+    .dialog-content{
+        width: 200px;
+    }
+
+    .article-item {
+        justify-content: space-around;
+    }    
+
+    .article-item-title h2{
+        font-size: 1.2em;
+    }
+
+    a.link-normal {
+        font-size: 1.2em;
+    }
+    
+    a.link-warning {
+        font-size: 1.2em;
+    }
+
+}
