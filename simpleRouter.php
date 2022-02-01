@@ -18,8 +18,11 @@ class Router {
         return true;
     }
 
-    public function LoadScript() {
 
+
+
+    public function LoadScript() {
+        echo "jha";
         //include_once
     }
 }

@@ -50,11 +50,6 @@ hr{
     transform: rotate(0.6deg);
 }
 
-/*.article-item:nth-child(2n+5){
-    transform: rotate(-0.2deg);
-}*/
-
-
 .article-item .article-item-title{
     min-width: 50%;
     padding-right: 20px;
@@ -77,19 +72,13 @@ hr{
     min-height: 600px;
 }
 
-/*.oddboxinner{
-    margin: 0px;
-    
-    transform: rotate(0.5deg);
-}*/
-
 .article-item div:last-child {
     margin-left: auto;
 }
 
 #article-item-buttons {
     margin-left: 20px;
-    width: 250px;
+    width: 300px;
     display: flex;
     align-content: flex-start;
     align-items: baseline;
@@ -101,9 +90,6 @@ hr{
 #article-item-buttons button:last-child{
     margin-left: auto;
 }
-
-/*@media (min-width: 1000px) {
-}*/
 
 
 .article-item a{
