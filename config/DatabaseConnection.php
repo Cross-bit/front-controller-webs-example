@@ -4,12 +4,12 @@ require_once(__DIR__.'/db_config.php');
 
 class DatabaseConnection  {
 
-  private string $host;
-  private string $user;
-  private string $password;
-  private string $database;
+  private $host;
+  private $user;
+  private $password;
+  private $database;
 
-  protected mysqli $connection;
+  protected $connection;
 
   public function __construct() {
     global $db_config;
