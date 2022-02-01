@@ -2,8 +2,6 @@
 
 require_once(__DIR__.'/src/models/articles-model.php');
 require_once(__DIR__.'/src/controllers/articles-controller.php');
-require_once(__DIR__.'/src/controllers/article-controller.php');
-require_once(__DIR__.'/src/controllers/article-edit-controller.php');
 require_once(__DIR__.'/config/config.php');
 
 
