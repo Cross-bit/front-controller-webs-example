@@ -40,6 +40,8 @@ function OnDeleteArticle(evntData) {
         // initialisation
         UpdatePage(currentPage);
 
+        UpdateButtonVisibility();
+
     }).catch((errorMessage) => {
         console.error(errorMessage);
     });

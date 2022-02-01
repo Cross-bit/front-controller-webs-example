@@ -8,6 +8,7 @@
         echo $pageContent['article'];
     ?>
 </div>
+
 <hr>
 
 <div class="single-article-menu" >
