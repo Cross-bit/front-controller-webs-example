@@ -1,3 +1,4 @@
 .htaccess
 config/db_config.php
+config/config.php
 
