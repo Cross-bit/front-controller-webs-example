@@ -6,9 +6,9 @@
 
     <form id="article-edit-form" action="?method=SaveEditedArticle" method="post">
 
-        <h2>Title:<h2>
+        <h2>Title:</h2>
         <input type="text" id="title-edit" class="requiredTextInput" name="title" maxlength="32" required="required" placeholder="Article title" value="<?= $pageContent['name'] ?>">
-        <h2>Content:<h2>
+        <h2>Content:</h2>
         <textarea id="content-edit-view" name="content" rows="20" maxlength="1024" ><?= $pageContent['article'] ?></textarea> 
     </form>
 

@@ -6,9 +6,12 @@ var ARTICLE_DELETE = (function (){
     var listItemsArr = Array.from(listItemsCollection);
 
     listItemsArr.forEach(item => {
-        var deleteBtn = item.querySelector('#article-item-buttons button#article-delete-btn');
-        deleteBtn.addEventListener('click', OnDeleteArticle)
-        deleteBtn.listItem = item;
+        var deleteBtn = item.querySelector('.article-item-buttons button.article-delete-btn');
+
+        if(deleteBtn != null){
+            deleteBtn.addEventListener('click', OnDeleteArticle)
+            deleteBtn.listItem = item;
+        }
     });
 
     function OnDeleteArticle(evntData) {
