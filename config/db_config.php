@@ -2,7 +2,7 @@
 
 $db_config = array(
 'server'   => 'localhost',
-'login'    => '91498793',
-'password' => 'Calcium',
+'login'    => 'root',
+'password' => 'toor',
 'database' => 'stud_91498793'
 );
