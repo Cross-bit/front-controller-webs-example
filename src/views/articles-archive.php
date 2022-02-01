@@ -19,10 +19,10 @@
                     <h2> <?= $article['name'] ?> </h2>
                 </div>
 
-                <div id="article-item-buttons">
+                <div class="article-item-buttons">
                     <a href="<?= BASE_URL ?>/article/<?= $article['id'] ?>" class="link-normal">Show</a>
                     <a href ="<?= BASE_URL ?>/article-edit/<?= $article['id'] ?>" class="link-normal" > Edit</a>
-                    <button id="article-delete-btn" class="btn delete-btn">Delete</button>
+                    <button class="btn article-delete-btn">Delete</button>
                     <!--<a href="" id="delete-btn" class="link-warning">Delete</a>-->
                 </div>
             </div>

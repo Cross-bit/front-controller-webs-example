@@ -50,11 +50,6 @@ hr{
     transform: rotate(0.6deg);
 }
 
-/*.article-item:nth-child(2n+5){
-    transform: rotate(-0.2deg);
-}*/
-
-
 .article-item .article-item-title{
     min-width: 50%;
     padding-right: 20px;
@@ -66,28 +61,15 @@ hr{
     font-size: 1.3em;
 }
 
-/*.comics-first{
-
-    border-width: 3px 3px 5px 5px;
-    border-radius: 4% 5% 6% 95%/8% 4% 1% 5%;
-    transform: rotate(-0.5deg);
-}*/
-
 #articles-list-container{
     min-height: 600px;
 }
-
-/*.oddboxinner{
-    margin: 0px;
-    
-    transform: rotate(0.5deg);
-}*/
 
 .article-item div:last-child {
     margin-left: auto;
 }
 
-#article-item-buttons {
+.article-item-buttons {
     margin-left: 20px;
     width: 250px;
     display: flex;
@@ -98,13 +80,9 @@ hr{
 
 }
 
-#article-item-buttons button:last-child{
+.article-item-buttons button:last-child{
     margin-left: auto;
 }
-
-/*@media (min-width: 1000px) {
-}*/
-
 
 .article-item a{
     transition: transform .15s;
@@ -146,7 +124,7 @@ a.link-warning {
 }
 
 
-.btn.delete-btn{
+.btn.article-delete-btn{
     color:red;
     text-decoration: none;
     font-size: 1.618em;
@@ -320,7 +298,12 @@ a.link-warning {
         padding-right: 20px;   
     }
 
-    #article-item-buttons button:last-child {
+
+    .article-item-buttons{
+        width: 150px;   
+    }
+
+    .article-item-buttons button:last-child {
         margin: 0px;
         padding: 0px;
     }
@@ -328,10 +311,6 @@ a.link-warning {
     .article-item {
         margin-left: auto;
         font-size: 0.8em;
-    }
-
-    #article-item-buttons{
-        width: 150px;   
     }
 
 }
