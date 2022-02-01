@@ -93,7 +93,7 @@ class ArticlesController {
                 
                 if (empty($lastArticle)){    
                     http_response_code(404);
-                    return;
+                    return;     
                 }
 
                 $redirectUrl = BASE_URL.'/article-edit/'.$lastArticle['id'];
