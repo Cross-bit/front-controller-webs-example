@@ -346,3 +346,39 @@ a.link-warning {
     }
 
 }
+
+
+.article-error-message {
+    
+    /*display: none;*/
+    background-color: orangered;
+    width: 80%;
+    font-size: 1.3em;
+    padding: 10px;
+}
+
+.create-article-box{
+    width: 100%;
+    border: black 2px solid;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.article-create-message-success {
+    background-color: green;
+    width: 100%;
+    height: 70px;
+    display: block;
+    text-align: center;
+    font-size: 2em;
+    padding: 10px;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+.articles-create-title{
+    font-size: 1.1em;
+    font-family: customComics;
+    border-radius: 5px;
+    width: 80%;      
+}

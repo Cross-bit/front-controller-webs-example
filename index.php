@@ -49,6 +49,11 @@ switch ($request[0]){
         $controller->{$method}($request[1]);
 
     break;
+    case 'articles-create':
+        $controller = new ArticlesController($articlesModel);
+        $method = $_GET['method'] ?? 'GetAllArticlesCreate';
+        $controller->{$method}();
+        break;
     default:
         http_response_code(404);
 }

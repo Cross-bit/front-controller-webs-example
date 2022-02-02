@@ -28,6 +28,52 @@ class ArticlesController {
         $template->RenderPage($pageData);
     }
 
+    public function GetAllArticlesCreate(){
+        $template = new Template('articles', 'create');
+        $pageData = new PageData(
+            'Articles create',
+            []
+        );
+
+        $template->RenderPage($pageData);
+    }
+
+    public function ValidataArticlesList(){
+        $data = file_get_contents('php://input');
+        $decoded = json_decode($data);
+
+        $response = [];
+
+        foreach($decoded as $id => $val){
+            $title = $val->title;
+            $content = $val->content;
+            $status = 'ok';
+
+            if(strlen($title) > 32){
+                $status = 'title-long';
+            }
+
+            if(strlen($content) > 1024){
+                $status = 'content-long';
+            }
+
+            if($title == ''){
+                $status = 'title-empty';
+            }
+
+            if($status == 'ok')
+                $this->articlesModel->InsertNewArticle($title, $content);
+
+            $response[$id] = [
+                'status' => $status
+            ];
+        }
+
+        $output = json_encode($response, JSON_PRETTY_PRINT);
+
+        echo $output;
+    }
+
     public function ShowArticle($id) {
         $template = new Template('articles', 'single');
 
@@ -71,7 +117,9 @@ class ArticlesController {
             $articleContent = $_POST['content'] ?? '';
             
             // allows to store only some tags
-            //$articleContent = strip_tags($articleContent, ['<br>', '<p>', '<hr>', '<img>', '<b>', '<img>']);
+            $articleContent = strip_tags($articleContent, ['<br>', '<p>', '<hr>', '<img>', '<b>', '<img>']);
+
+            // todo: sanitazice
 
             $this->articlesModel->UpdateArticle($id, $_POST['title'], $articleContent);
         }
